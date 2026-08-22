@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math × Physics // Olympiad</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="nav">
+    <div class="brand">MATH<span>×</span>PHYSICS // OLYMPIAD</div>
+    <div id="timerBox" class="timer hidden">TIEMPO: <b id="timer">60:00</b></div>
+  </div>
+</header>
+
+<!-- PANTALLA DE REGISTRO -->
+<section id="registration" class="screen">
+  <div class="register-card">
+    <div class="register-logo">M×P</div>
+    <p class="eyebrow">OLIMPIADA ACADÉMICA</p>
+    <h1>Competencia de<br><span>Matemáticas y Física</span></h1>
+    <p class="muted">Competencia individual · Bachillerato</p>
+
+    <form id="registrationForm">
+      <label>
+        Nombre completo
+        <input id="participantName" required maxlength="80"
+               placeholder="Ej. Mathias Alejandro">
+      </label>
+
+      <label>
+        Colegio
+        <input id="school" required maxlength="120"
+               placeholder="Ej. Unidad Educativa Particular del Pacífico">
+      </label>
+
+      <label>
+        Curso / categoría
+        <input id="category" required maxlength="60"
+               placeholder="Ej. 3.º de Bachillerato">
+      </label>
+
+      <label>
+        Ciudad <span class="optional">(opcional)</span>
+        <input id="city" maxlength="60" placeholder="Ej. Machala">
+      </label>
+
+      <button class="primary-btn" type="submit">COMENZAR COMPETENCIA</button>
+    </form>
+
+    <p class="warning">Una vez iniciada la competencia, el tiempo comenzará a correr.</p>
+  </div>
+</section>
+
+<!-- COMPETENCIA -->
+<main id="competition" class="hidden">
+
+  <div class="page-heading">
+    <h1>Competencia de Matemáticas y Física</h1>
+    <p>Ronda clasificatoria · Competencia individual</p>
+  </div>
+
+  <section class="card participant-card">
+    <div class="card-head">Tu participación</div>
+    <div class="participant-body">
+      <div>
+        <div id="displayName" class="participant-name"></div>
+        <div class="school-line"><span>COLEGIO:</span> <strong id="displaySchool"></strong></div>
+        <div class="category-line"><span>CATEGORÍA:</span> <strong id="displayCategory"></strong></div>
+        <div id="displayCityLine" class="category-line hidden"><span>CIUDAD:</span> <strong id="displayCity"></strong></div>
+      </div>
+      <button id="resetBtn" class="outline-btn">Reiniciar prueba</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head">Estadísticas de los problemas</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Problema</th>
+            <th>Materia</th>
+            <th>Intentos</th>
+            <th>Estado</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody id="statsBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="mathSection" class="card">
+    <div class="subject-head">
+      <h2>📐 MATEMÁTICAS</h2>
+      <span>3 problemas · 30 puntos</span>
+    </div>
+    <div id="mathQuestions"></div>
+  </section>
+
+  <section id="physicsSection" class="card">
+    <div class="subject-head">
+      <h2>⚛️ FÍSICA</h2>
+      <span>3 problemas · 30 puntos</span>
+    </div>
+    <div id="physicsQuestions"></div>
+  </section>
+
+  <section class="card final-card">
+    <button id="finishBtn" class="primary-btn">FINALIZAR COMPETENCIA</button>
+    <div id="finalResult" class="final-result hidden"></div>
+  </section>
+</main>
+
+<footer>Competencia de Matemáticas y Física · Plataforma local</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
